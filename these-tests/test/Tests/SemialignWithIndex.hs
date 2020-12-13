@@ -5,7 +5,7 @@ module Tests.SemialignWithIndex (alignWithKeyProps) where
 
 import Prelude hiding (zip)
 
-import Control.Lens              (FunctorWithIndex (imap))
+import Data.Functor.WithIndex    (FunctorWithIndex (imap))
 import Test.QuickCheck
        (Arbitrary (..), CoArbitrary, Property, once, (===))
 import Test.QuickCheck.Function  (Fun (..), Function, applyFun)

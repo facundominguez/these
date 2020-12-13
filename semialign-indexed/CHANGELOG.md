@@ -1,3 +1,7 @@
+# 1.2
+
+- Use `FunctorWithIndex` from `indexed-traversable` 
+
 # 1.1
 
 - Split `ZipWithIndex` out of `SemialignWithIndex`

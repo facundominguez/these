@@ -6,11 +6,12 @@
 module Data.Semialign.Indexed (
     SemialignWithIndex (..),
     ZipWithIndex (..),
-    ) where
+) where
 
 import Prelude hiding (repeat, zip, zipWith)
 
-import Control.Lens (FunctorWithIndex (imap))
+import Data.Functor.WithIndex           (FunctorWithIndex (imap))
+import Data.Functor.WithIndex.Instances ()
 
 import Data.Align
 import Data.These
@@ -21,8 +22,8 @@ import Control.Applicative   (ZipList)
 import Data.Functor.Compose  (Compose (..))
 import Data.Functor.Identity (Identity)
 import Data.Functor.Product  (Product (..))
-import Data.Hashable         (Hashable)
 import Data.HashMap.Strict   (HashMap)
+import Data.Hashable         (Hashable)
 import Data.IntMap           (IntMap)
 import Data.Map              (Map)
 import Data.Sequence         (Seq)

@@ -8,9 +8,9 @@
 #
 # For more information, see https://github.com/haskell-CI/haskell-ci
 #
-# version: 0.11.20201230
+# version: 0.11.20210101
 #
-# REGENDATA ("0.11.20201230",["github","--config=cabal.haskell-ci","cabal.project"])
+# REGENDATA ("0.11.20210101",["github","--config=cabal.haskell-ci","cabal.project"])
 #
 name: Haskell-CI
 on:
@@ -167,7 +167,7 @@ jobs:
           if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then echo "packages: ${PKGDIR_these_optics}" >> cabal.project ; fi
           echo "packages: ${PKGDIR_semialign}" >> cabal.project
           echo "packages: ${PKGDIR_semialign_indexed}" >> cabal.project
-          if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then echo "packages: ${PKGDIR_semialign_optics}" >> cabal.project ; fi
+          if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80200)) -ne 0 ] ; then echo "packages: ${PKGDIR_semialign_optics}" >> cabal.project ; fi
           echo "packages: ${PKGDIR_monad_chronicle}" >> cabal.project
           echo "packages: ${PKGDIR_these_tests}" >> cabal.project
           if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80200)) -ne 0 ] ; then echo "package these" >> cabal.project ; fi
@@ -222,8 +222,8 @@ jobs:
           if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then doctest  src ; fi
           if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then cd ${PKGDIR_semialign_indexed} || false ; fi
           if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then doctest  src ; fi
-          if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then cd ${PKGDIR_semialign_optics} || false ; fi
-          if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then doctest  src ; fi
+          if [ $((! GHCJSARITH && HCNUMVER >= 80200)) -ne 0 ] ; then cd ${PKGDIR_semialign_optics} || false ; fi
+          if [ $((! GHCJSARITH && HCNUMVER >= 80200)) -ne 0 ] ; then doctest  . ; fi
           if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then cd ${PKGDIR_monad_chronicle} || false ; fi
           if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then doctest  src ; fi
           if [ $((! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then cd ${PKGDIR_these_tests} || false ; fi
@@ -240,8 +240,8 @@ jobs:
           ${CABAL} -vnormal check
           cd ${PKGDIR_semialign_indexed} || false
           ${CABAL} -vnormal check
-          if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then cd ${PKGDIR_semialign_optics} || false ; fi
-          if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80000)) -ne 0 ] ; then ${CABAL} -vnormal check ; fi
+          if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80200)) -ne 0 ] ; then cd ${PKGDIR_semialign_optics} || false ; fi
+          if [ $((GHCJSARITH || ! GHCJSARITH && HCNUMVER >= 80200)) -ne 0 ] ; then ${CABAL} -vnormal check ; fi
           cd ${PKGDIR_monad_chronicle} || false
           ${CABAL} -vnormal check
           cd ${PKGDIR_these_tests} || false

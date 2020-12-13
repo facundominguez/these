@@ -58,6 +58,7 @@ test-suite test
     , binary
     , containers
     , hashable
+    , indexed-traversable
     , lens
     , QuickCheck
     , semialign

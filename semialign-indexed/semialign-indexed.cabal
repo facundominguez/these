@@ -1,7 +1,6 @@
 cabal-version:      >=1.10
 name:               semialign-indexed 
-version:            1.1
-x-revision:         2
+version:            1.2
 synopsis:           SemialignWithIndex, i.e. izipWith and ialignWith
 homepage:           https://github.com/isomorphism/these
 license:            BSD3
@@ -65,10 +64,11 @@ library
 
   -- other dependencies
   build-depends:
-      hashable              >=1.2.7.0  && <1.4
-    , lens                  >=4.17     && <4.20
-    , unordered-containers  >=0.2.8.0  && <0.3
-    , vector                >=0.12.0.2 && <0.13
+      hashable                       >=1.2.7.0  && <1.4
+    , indexed-traversable            >=0.1      && <0.2
+    , indexed-traversable-instances  >=0.1      && <0.2
+    , unordered-containers           >=0.2.8.0  && <0.3
+    , vector                         >=0.12.0.2 && <0.13
 
   -- base shims
   if !impl(ghc >=8.0)
